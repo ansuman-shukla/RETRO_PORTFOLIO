@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "VT323";
+  src: url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --pixel-blue: #1e00ff;
+  --pixel-red: #ff0004;
+  --pixel-black: #000000;
+  --pixel-white: #ffffff;
+}
+
+body {
+  font-family: "VT323", monospace;
+  image-rendering: pixelated;
+}
+
+.font-pixel {
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 1px;
+}
+
+/* Pixel Text */
+.pixel-text {
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+/* Pixel Border */
+.pixel-border {
+  border: 4px solid var(--pixel-blue);
+  position: relative;
+}
+
+/* Pixel Divider */
+.pixel-divider {
+  height: 4px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--pixel-blue),
+    var(--pixel-blue) 10px,
+    var(--pixel-red) 10px,
+    var(--pixel-red) 20px
+  );
+  margin: 20px 0;
+}
+
+.pixel-divider-small {
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--pixel-blue),
+    var(--pixel-blue) 5px,
+    var(--pixel-red) 5px,
+    var(--pixel-red) 10px
+  );
+  margin: 10px 0;
+}
+
+/* Pixel Window */
+.pixel-window {
+  border: 4px solid var(--pixel-white);
+  margin-bottom: 20px;
+}
+
+.pixel-window-title {
+  background-color: var(--pixel-blue);
+  color: var(--pixel-white);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 14px;
+}
+
+.pixel-window-controls {
+  display: flex;
+  margin-right: 12px;
+}
+
+.pixel-window-control {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  border: 2px solid var(--pixel-black);
+}
+
+.pixel-window-title-text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.pixel-window-content {
+  padding: 16px;
+}
+
+/* Pixel Card */
+.pixel-card {
+  border: 4px solid var(--pixel-white);
+  padding: 16px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pixel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 0 -5px var(--pixel-blue);
+}
+
+/* Pixel Button */
+.pixel-button {
+  border: 4px solid var(--pixel-white);
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  padding: 8px 16px;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.pixel-button:hover {
+  transform: translateY(-2px);
+}
+
+.pixel-button:active {
+  transform: translateY(2px);
+}
+
+/* Pixel Avatar */
+.pixel-avatar-container {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.pixel-avatar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--pixel-blue);
+  border: 4px solid var(--pixel-white);
+  overflow: hidden;
+  position: relative;
+}
+
+.pixel-avatar-inner {
+  width: 100%;
+  height: 100%;
+  background-image: url("/placeholder.svg?height=120&width=120");
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+/* Pixel Art Elements */
+.pixel-art-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixel-art-image {
+  max-width: 100%;
+  max-height: 100%;
+  image-rendering: pixelated;
+}
+
+/* Pixel Message Icon */
+.pixel-message-icon {
+  width: 120px;
+  height: 80px;
+  background-color: var(--pixel-white);
+  border: 4px solid var(--pixel-blue);
+  position: relative;
+}
+
+.pixel-message-icon::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: -10px;
+  left: 20px;
+  background-color: var(--pixel-white);
+  border-right: 4px solid var(--pixel-blue);
+  border-bottom: 4px solid var(--pixel-blue);
+  transform: rotate(45deg);
+}
+
+.pixel-message-lines {
+  position: absolute;
+  width: 80px;
+  height: 8px;
+  top: 20px;
+  left: 20px;
+  background-color: var(--pixel-red);
+  box-shadow: 0 16px 0 0 var(--pixel-red), 0 32px 0 0 var(--pixel-red);
+}
+
+/* Scanlines Effect */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 100% 4px;
+  z-index: 9999;
+}
+
+/* Pixel Cursor */
+.pixel-cursor {
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid var(--pixel-white);
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Light mode specific styles */
+.bg-white .pixel-window,
+.bg-white .pixel-card,
+.bg-white .pixel-button,
+.bg-white .pixel-avatar,
+.bg-white .pixel-message-icon {
+  border-color: var(--pixel-black);
+}
+
+.bg-white .pixel-message-icon {
+  background-color: var(--pixel-white); /* Keep background white */
+}
+
+.bg-white .pixel-message-icon::before {
+  background-color: var(--pixel-white); /* Keep background white */
+  border-right-color: var(--pixel-black);
+  border-bottom-color: var(--pixel-black);
+}
+
+.bg-white .pixel-cursor {
+  border-color: var(--pixel-black);
+}
+
+/* Animations */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 0 var(--pixel-red), -2px 0 0 var(--pixel-blue);
+  }
+  25% {
+    text-shadow: -2px 0 0 var(--pixel-red), 2px 0 0 var(--pixel-blue);
+  }
+  50% {
+    text-shadow: 2px 0 0 var(--pixel-red), -2px 0 0 var(--pixel-blue);
+  }
+  75% {
+    text-shadow: -2px 0 0 var(--pixel-red), 2px 0 0 var(--pixel-blue);
+  }
+  100% {
+    text-shadow: 2px 0 0 var(--pixel-red), -2px 0 0 var(--pixel-blue);
+  }
+}
+
+.animate-glitch {
+  animation: glitch 2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
