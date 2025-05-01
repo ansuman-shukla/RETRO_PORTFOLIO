@@ -124,14 +124,14 @@ export default function Home() {
             isDarkMode={isDarkMode}
           />
           <PixelExperienceCard
-            title="SDE Intern"
-            company="Ziner"
-            duration="Jan. 2025 – Present"
+            title="SDE Intern" // Updated title
+            company="Zinier" // Updated company name
+            duration="Jan. 2025 – Present" // Updated duration
             location="Bengaluru, Karnataka"
             achievements={[
-              "Developed scalable backend APIs using Node.js and Express.",
-              "Implemented real-time features with WebSockets.",
-              "Contributed to frontend development using React and TypeScript.",
+              "Built an Agentic workflow automating Scheduler data processing and team notifications, cutting manual effort by 1+ hour/day", // Updated achievement
+              "Contributed to frontend development using React and TypeScript",
+              "Curating a Zinier-centric dataset to fine-tune AI models for developing Zinier-specific workflows" // Updated achievement
             ]}
             isDarkMode={isDarkMode}
           />
